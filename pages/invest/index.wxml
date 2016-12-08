@@ -1,0 +1,37 @@
+<!--pages/index/index.wxml-->
+<view class="banner"></view>
+<view class="addAsset">
+    <text>我的投资</text>
+</view>
+<view class="hot_sale">
+    <text>{{text}}爆款</text>
+</view>
+<view class="current">
+<view class="current_top"></view>
+    <view class="current_text">
+        <text class="current_text_style">活期</text>
+    </view>
+</view>
+<view class="current_product">
+    <view class="current_product_title">
+        <text class="text_color">一账通宝</text>
+    </view>
+    <view class="current_product_bottom">
+        <view class="current_product_left">
+            <view>
+                <text class="rate_style">2.40%</text>
+            </view>
+            <view style="padding-top: 9px">
+                <text class="current_product_left_text">七日年化收益率</text>
+            </view>
+        </view>
+        <view class="current_product_right">
+            <view class="current_product_right_view">
+                <text class="current_product_right_title">高收益</text>
+            </view>
+            <view class="current_product_right_bottom">
+                <text class="current_product_left_text">投资期限365</text>
+            </view>
+        </view>
+    </view>
+</view>

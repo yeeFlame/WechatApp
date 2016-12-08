@@ -1,0 +1,42 @@
+{
+    "pages": [
+        "pages/invest/index",
+        "pages/insurance/index",
+        "pages/loan/index",
+        "pages/creditCard/index"
+    ], 
+    "window": {
+        "navigationBarTitleText": "金融旗舰店",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#ffffff",
+        "backgroundTextStyle": "dark",
+        "enablePullDownRefresh": true
+    },
+    "tabBar": {
+        "color": "#000000",
+        "selectedColor": "#CFA767",
+        "backgroundColor": "#ffffff",
+        "borderStyle": "white",
+      "list": [{
+        "pagePath": "pages/invest/index",
+        "text": "投资"
+      },{
+      "pagePath": "pages/insurance/index",
+      "text": "保险"
+      },{
+          "pagePath": "pages/loan/index",
+          "text": "贷款"
+      },{
+          "pagePath": "pages/creditCard/index",
+          "text": "信用卡"
+      }],
+      "position": "bottom"
+    },
+    "networkTimeout": {
+      "request": 20000,
+      "connectSocket": 20000,
+      "uploadFile": 20000,
+      "downloadFile": 20000
+    },
+"debug": true
+}
