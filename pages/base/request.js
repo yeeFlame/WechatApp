@@ -78,12 +78,12 @@ export function gp({url = 'https://mgw.pingan.com.cn/toa-mgw/rest/gateway', oper
       method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       success: function(res){
         // success
-        //success(res ? res.data : res);
+        success(res ? res.data : res);
         console.log(res, 'success');
       },
       fail: function(err) {
         // fail
-        //fail(err);
+        fail(err);
         console.log(err, 'error');
       },
       complete: function() {

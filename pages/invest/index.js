@@ -30,27 +30,37 @@ Page({
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
     const appInstance = getApp();
-    console.log(appInstance.globalData);
-    gp({operationType: 'emallInvestment', data: params});
+    gp({operationType: 'emallInvestment', data: params, success: this.success});
+    console.log(appInstance.globalData, this.data, '数据data');
   },
   onReady:function(){
     // 页面渲染完成
+    console.log('页面渲染完成')
   },
   onShow:function(){
+      console.log('页面显示')
     // 页面显示
   },
   onHide:function(){
+      console.log('页面隐藏')
     // 页面隐藏
   },
   onUnload:function(){
+      console.log('页面关闭')
     // 页面关闭
   },
   onPullDownRefresh: function() {
     // 页面相关事件处理函数--监听用户下拉动作
     console.log('onPullDownRefresh');
+    gp({operationType: 'emallInvestment', data: params, success: this.success}); 
   },
   onReachBottom: function() {
     //页面上拉触底事件的处理函数
     console.log('onReachBottom');
+  },
+  success(res) {
+    this.setData({
+      investData:res.result
+    })
   }
 })

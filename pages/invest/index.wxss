@@ -10,10 +10,55 @@ text {
     height: 100px;
     background: #FFF5E4;
 }
+/*爆款*/
 .hot_sale {
     height: 108px;
-    border: 1px solid #B57A1E;
+    border: 1px solid #CFA767;
+    margin-left: 19px;
+    margin-right: 20px;
+    margin-bottom: 24px;
+    margin-top: 24px;
+    position: relative;
 }
+.hot_sale_title {
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    background: transparent;
+    top: -10px;
+    left: 0;
+    text-align: center;
+}
+.hot_sale_title_text {
+    color:#CFA767;
+    font-size:18px;
+    background:#FFFFFF;
+    width:fit-content;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+.hot_sale_left {
+    float: left;
+    width: 49%;
+}
+.hot_sale_midLine {
+    float: left;
+    width: 1px;
+    height: 54px;
+    background: #CFA767;
+    margin-top: 27px;
+}
+.hot_sale_right {
+    float: right;
+    width: 50%;
+}
+.hot_sale_right_date {
+    float: left;
+    margin-left: 12px;
+    margin-top: 6px;
+}
+
+/*理财产品*/
 .current {
     height: 18px;
     position: relative;
@@ -41,6 +86,7 @@ text {
     padding-top: 18px;
     padding-left: 19px;
     padding-bottom: 18px;
+    position: relative;
 }
 .current_product_title {
     padding-bottom: 18px;
@@ -51,6 +97,7 @@ text {
 }
 .current_product_bottom {
     position: relative;
+    height: 60px;
 }
 .current_product_left {
     position: absolute;

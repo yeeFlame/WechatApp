@@ -1,0 +1,42 @@
+<!-- 金融旗舰店活期定期产品 -->
+<template name="commonFinancingItem">
+    <view class="current_product">
+        <view class="current_product_title">
+            <text class="text_color">{{title}}</text>
+        </view>
+        <view class="current_product_bottom">
+            <view class="current_product_left">
+                <view>
+                    <text class="rate_style">{{profit1}}{{profitUnit}}</text>
+                </view>
+                <view style="padding-top: 9px">
+                    <text class="current_product_left_text">{{profitLabel}}</text>
+                </view>
+            </view>
+            <view class="current_product_right">
+                <view class="current_product_right_view">
+                    <text class="current_product_right_title">{{tag1}}</text>
+                </view>
+                <view class="current_product_right_bottom">
+                    <text class="current_product_left_text">{{investTimeLabel}}{{investTime}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+<!-- 金融旗舰店活期定期理财头 -->
+<template name="currentTitle">
+    <view class="current">
+        <view class="current_top"></view>
+        <view class="current_text">
+            <text class="current_text_style">{{title}}</text>
+        </view>
+    </view>
+</template>
+
+<template name="commonFinancing" >
+    <template is="currentTitle" data="{{...flagShip_invest_currentFinancing.data[0]}}"></template>
+    <block>
+        <template is="commonFinancingItem" data="{{...flagShip_invest_currentFinancing.data[1]}}"></template>
+    </block>
+</template>
