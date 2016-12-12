@@ -20,7 +20,11 @@ const params = {
   }, {
       pluginName: 'flagShip_invest_millionFinancing',
       pluginVersion: versionNun
-  }]
+  },{
+    pluginName: 'requestIdsAd',
+    pluginVersion: versionNun
+  }
+  ]
 };
 const URL = "https://mgw.pingan.com.cn/toa-mgw/rest/gateway";
 Page({
@@ -59,8 +63,47 @@ Page({
     console.log('onReachBottom');
   },
   success(res) {
+    console.log('resres',res.result)
+    const result = res.result;
+    let 
+    currentFinancing = [],
+    selectFinancing = [],
+    hotSaleProduct = [],
+    investTool = [],
+    hotFundList = [],
+    hotFundTitle,
+    currentFinancingTitle,
+    selectFinancingTitle;
+
+    if (result.flagShip_invest_currentFinancing && result.flagShip_invest_currentFinancing.data.length > 0) {
+      currentFinancing = result.flagShip_invest_currentFinancing.data.slice(1);
+      currentFinancingTitle = result.flagShip_invest_currentFinancing.data[0];
+    }
+    if (result.flagShip_invest_selectFinancing && result.flagShip_invest_selectFinancing.data.length > 0) {
+      selectFinancing = result.flagShip_invest_selectFinancing.data.slice(1);
+      selectFinancingTitle = result.flagShip_invest_selectFinancing.data[0];
+    }
+    if (result.flagShip_invest_hotSale.data && result.flagShip_invest_hotSale.data.length > 0) {
+        hotSaleProduct = result.flagShip_invest_hotSale.data[1];
+    }
+    if (result.flagShip_invest_tool.data && result.flagShip_invest_tool.data.length > 0) {
+      investTool = result.flagShip_invest_tool.data;
+    }
+    if (result.flagShip_invest_hotFund.data && result.flagShip_invest_hotFund.data.length > 0) {
+      hotFundList = result.flagShip_invest_hotFund.data.slice(1);
+      hotFundTitle = result.flagShip_invest_hotFund.data[0];
+    }
     this.setData({
-      investData:res.result
-    })
-  }
+      investData: {
+      currentFinancing,
+      currentFinancingTitle,
+      selectFinancing,
+      selectFinancingTitle,
+      hotSaleProduct,
+      investTool,
+      hotFundTitle,
+      hotFundList,
+    },
+    });
+  },
 })

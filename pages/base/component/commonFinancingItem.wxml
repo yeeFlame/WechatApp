@@ -7,7 +7,8 @@
         <view class="current_product_bottom">
             <view class="current_product_left">
                 <view>
-                    <text class="rate_style">{{profit1}}{{profitUnit}}</text>
+                    <text class="rate_style">{{profit1}}</text>
+                    <text style="color: #FB4653; font-size: 14px"> {{profitUnit}}</text>
                 </view>
                 <view style="padding-top: 9px">
                     <text class="current_product_left_text">{{profitLabel}}</text>
@@ -34,9 +35,105 @@
     </view>
 </template>
 
-<template name="commonFinancing" >
-    <template is="currentTitle" data="{{...flagShip_invest_currentFinancing.data[0]}}"></template>
-    <block>
-        <template is="commonFinancingItem" data="{{...flagShip_invest_currentFinancing.data[1]}}"></template>
+<template name="currentFinancing" >
+    <template is="currentTitle" data="{{...currentFinancingTitle}}"></template>
+    <block wx:for="{{currentFinancing}}" wx:key="{{index}}">
+        <template is="commonFinancingItem" data="{{...item}}"></template>
     </block>
 </template>
+
+<template name="selectFinancing" >
+    <template is="currentTitle" data="{{...selectFinancingTitle}}"></template>
+    <block wx:for="{{selectFinancing}}" wx:key="{{index}}">
+        <template is="commonFinancingItem" data="{{...item}}"></template>
+    </block>
+</template>
+
+<!-- 爆款 -->
+<template name="hotSaleProduct">
+    <view class="hot_sale">
+        <view class="hot_sale_title">
+            <text class="hot_sale_title_text"> 爆款·{{title}} </text>
+        </view>
+        <view class="hot_sale_left">
+            <view style="padding:27px 0 0 32px">
+                <view style="padding-bottom: 6px;">
+                    <text style="color: #FB4653;font-size: 30px;">{{profit1}}</text>
+                    <text wx:if="{{!!profit2}}" style="color: #FB4653;font-size: 30px;"> - {{profit2}}</text>
+                    <text style="color: #FB4653;font-size: 18px;"> {{profitUnit}}</text>
+                </view>
+                <view>
+                    <text style="font-size:14px; color: #4A4A4A">{{profitLabel}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="hot_sale_midLine"></view>
+        <view class="hot_sale_right">
+            <view style="padding: 27px 0 0 12px">
+                <view class="current_product_right_view" style="float: left;">
+                    <text class="current_product_right_title">{{tag1}}</text>
+                </view>
+                <view class="current_product_right_view" style="float: left; margin-left: 6px;">
+                    <text class="current_product_right_title">{{tag2}}</text>
+                </view>
+            </view>
+            <view class="hot_sale_right_date">
+                <text style="font-size:14px; color: #4A4A4A">{{tag3}}</text>
+            </view>
+        </view>
+    </view>
+</template>
+
+<!-- 工具 -->
+<template name="investTool" data="{{investTool}}">
+    <scroll-view scroll-x="true" style="height:71px; width: 100%; overflow: auto;">
+        <view style="width: 200%;">
+            <block wx:for="{{investTool}}" wx:key="{{index}}">
+                <template is="investToolItem" data="{{...item}}"></template>                
+            </block>
+        </view>
+    </scroll-view>  
+</template>
+
+<template name="investToolItem">
+    <view class="investToolItem">
+        <view style="width: 94px;">
+            <image class="investToolItem_image" src="{{mediumImageURL}}" />
+        </view>
+        <view style="width: 94px; text-align: center;">
+            <text style="color: #4A4A4A; font-size: 10px;">{{title}}</text>
+        </view>
+    </view>
+</template>
+
+<!-- 热门基金 -->
+<template name="hotFund">
+    <template is="currentTitle" data="{{...hotFundTitle}}"></template>
+    <view style="height:27px;"></view>
+    <block wx:for="{{hotFundList}}" wx:key="{{index}}">
+        <template is="hotFundItem" data="{{...item}}"></template>
+    </block>
+</template>
+
+<template name="hotFundItem">
+    <view style="position:relative;height:77px;">
+        <view class="hotFund_left">
+            <view>
+                <text class="hotFund_left_topText">{{title}}</text>
+            </view>
+            <view>
+                <text class="hotFund_left_bottomText">{{desc}}</text>
+            </view>
+        </view>
+
+        <view class="hotFund_right">
+            <view>
+                <text class="hotFund_right_topText">{{value}}{{unit}}</text>
+            </view>
+            <view>
+                <text class="hotFund_right_bottomText">{{timeDesc}}</text>
+            </view>
+        </view>
+    </view>
+</template>
+

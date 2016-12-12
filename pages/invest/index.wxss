@@ -130,3 +130,45 @@ text {
 .current_product_right_bottom {
     padding-top: 11px;
 }
+
+/* 工具栏 */
+.investToolItem {
+    height: 70px;
+    position: relative;
+    overflow: hidden;
+    float: left;
+}
+.investToolItem_image {
+    height: 48px;
+    width: 48px;
+    padding-left: 23px;
+}
+
+/* 热门基金 */
+
+.hotFund_left {
+    position: absolute;
+    left: 19px;
+}
+.hotFund_left_topText {
+    color:#4A4A4A;
+    font-size: 16px;
+    line-height: 24px;
+}
+.hotFund_left_bottomText {
+    color: #7E919F;
+    font-size: 12px;
+}
+
+.hotFund_right {
+    position: absolute;
+    right: 20px;
+}
+.hotFund_right_topText {
+    color: #FF1414;
+    font-size: 16px;
+}
+.hotFund_right_bottomText {
+    color: #4A4A4A;
+    font-size: 12px;
+}
