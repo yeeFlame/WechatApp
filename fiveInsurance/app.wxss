@@ -8,3 +8,7 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
+text {
+  color: #4A4A4A;
+  font-size: 16px;
+}
