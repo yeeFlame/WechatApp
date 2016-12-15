@@ -13,12 +13,12 @@
   <view class="insurance_item">
       <text class="item_text">{{category}}</text>
       <view class="people_ins">
-        <input type="number" placeholder="12" value="{{private_percentage}}" disabled="true" />
+        <input type="number" placeholder="" value="{{private_percentage}}" disabled="{{false}}" />
         <text>%</text>
         <text>{{salary * private_percentage/100}}</text>
       </view>
       <view class="compony_ins">
-        <input class="compony_ins_input" type="number" placeholder="12" value="{{company_percentage}}" disabled="true"/>
+        <input class="compony_ins_input" type="number" placeholder="12" value="{{company_percentage}}" disabled="{{false}}"/>
         <text>%</text>
         <text>{{salary * company_percentage/100}}</text>
       </view>

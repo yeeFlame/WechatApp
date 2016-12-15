@@ -65,7 +65,7 @@ Page({
     //   that.setData({
     //     userInfo:userInfo
     //   })
-    // })
+    // 
   },
   total: function () {
     const insurance = this.data.insurance;
@@ -86,12 +86,41 @@ Page({
       inputValue: e.detail.value
     })
   },
+  modalView: function(text) {
+    wx.showModal({
+      title: 'Warning',
+      content: text,
+      showCancel: false,
+      success: function(res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+      }
+  }
+});
+  },
   startCount: function(){
-    const inputValue = this.data.inputValue;
-    this.setData({
-      salary: inputValue,
-      focus: false,
-    })
+    let inputValue = this.data.inputValue;
+    if(!!inputValue) {
+        if(!!(inputValue/1)){
+          if ( inputValue > 0 ) {
+            if(inputValue  > 17814) {
+              inputValue = 17814;
+            }else if (inputValue < 2014) {
+              inputValue = 2014;
+            }
+            this.setData({
+              salary: inputValue,
+              focus: false,
+            });
+          } else {
+            this.modalView('别开玩笑了，你还欠老板钱？')
+          }    
+        } else{
+          this.modalView('请输入数字，OK？')
+        }
+    }else {
+        this.modalView('输入不能为空，请重新输入！');
+    }
   },
   resetData: function() {
     this.setData({
